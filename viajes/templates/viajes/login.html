@@ -1,0 +1,23 @@
+{% extends 'viajes/index.html' %}
+
+{% block titulo %}
+
+<div class="col-lg-8 align-self-end">
+    <h1 class="text-white font-weight-bold">Login</h1>
+    <hr class="divider" />
+</div>
+<div class="col-lg-8 align-self-baseline"></div>
+
+{% endblock titulo %}
+
+
+{% block contenido %} 
+
+<h5>
+<form action="" method="post">{% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <input type="submit" value="Iniciar Sesión">
+</form>
+</h5>
+
+{% endblock contenido %}

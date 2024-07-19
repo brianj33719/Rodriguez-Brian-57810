@@ -1,0 +1,31 @@
+{% extends 'viajes/index.html' %}
+{% load static %}
+
+{% block titulo %}
+
+<div class="col-lg-8 align-self-end">
+    <h1 class="text-white font-weight-bold">Te cuento un poco de mí...</h1>
+    <hr class="divider" />
+</div>
+<div class="col-lg-8 align-self-baseline"></div>
+
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+<div class="row">
+    <div class="col-lg-4">
+        <img src="{% static 'assets/WhatsApp Image 2024-06-19 at 12.01.38.jpeg' %}" class="img-fluid rounded-circle" alt="Mi Foto">
+    </div>
+    <div class="col-lg-8 text-center d-flex flex-column justify-content-center">
+        <div class="intro-text">
+            <h3>Mi nombre es Brian, soy el creador de esta página y mi Proyecto está orientado a facilitar Viajes y Turismo.</h3>
+            <hr class="divider" />
+            <h3>Con este proyecto intento simplificar la organización de Viajes a diferentes destinos.</h3>
+            <h4>Mis hobbies son jugar al ajedrez, tocar la guitarra, leer y cocinar.</h4>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}

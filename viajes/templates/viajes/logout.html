@@ -1,0 +1,20 @@
+{% extends 'viajes/index.html' %}
+
+{% block titulo %}
+
+<div class="col-lg-8 align-self-end">
+    <h1 class="text-white font-weight-bold">Se ha deslogueado exitosamente</h1>
+    <hr class="divider" />
+</div>
+<div class="col-lg-8 align-self-baseline"></div>
+
+{% endblock titulo %}
+
+
+{% block contenido %} 
+
+{% csrf_token %}
+
+<h4 align="center"><a href="{% url 'login' %}">Click aqui para iniciar sesión nuevamente</a></h4>
+
+{% endblock contenido %}

@@ -1,0 +1,28 @@
+{% extends 'viajes/index.html' %}
+
+
+{% block titulo %}
+
+<div class="col-lg-8 align-self-end">
+    <h1 class="text-white font-weight-bold">Buscar Alojamientos</h1>
+    <hr class="divider" />
+</div>
+<div class="col-lg-8 align-self-baseline"></div>
+
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+<h5>
+<form action="{% url 'encontrarAlojamientos' %}" method="get">{% csrf_token %}
+    <table>
+        <p>Ingrese el nombre del alojamiento o su ubicación: <input type="text" placeholder = "Calamuchita..." name="buscar" id="buscar" required></p>  
+    </table>
+    <input type="submit" value="Buscar">
+</form>
+</h5>
+
+{% endblock contenido %}
+
+  

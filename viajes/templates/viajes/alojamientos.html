@@ -1,0 +1,66 @@
+{% extends 'viajes/index.html' %}
+
+
+{% block titulo %}
+
+<div class="col-lg-8 align-self-end">
+    <h1 class="text-white font-weight-bold">Alojamientos</h1>
+    <hr class="divider" />
+</div>
+<div class="col-lg-8 align-self-baseline"></div>
+
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+<h5>
+<table>
+    <tr>
+        <td width="200"><h2>Alojamientos</h2></td>
+        <td>
+            <a
+            href="{% url 'alojamientosForm' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            </a>
+        </td>        
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead> 
+        <tr>
+            <th>ID</th>
+            <th>Nombre/ Ubicacion del Alojamiento</th>
+            <th>Categoria en Estrellas</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>        
+        {% for a in alojamientos %}
+            <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.hotel }}</td>
+                <td>{{ a.categoriaEstrellas }}</td>
+                <td>
+                    <a
+                      href="{% url 'alojamientosUpdate' a.id %}"
+                      class="btn btn-primary"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                    </a>
+                    <a
+                      href="{% url 'alojamientosDelete' a.id %}"
+                      class="btn btn-danger"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                    </a>                
+                </td>
+            </tr>            
+        {% endfor %}
+    </tbody>
+</table>
+</h5>
+
+{% endblock contenido %}
